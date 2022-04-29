@@ -31,19 +31,19 @@ namespace SibEscalas
         {
             this.TabPanel = new System.Windows.Forms.TabControl();
             this.TabFuncoes = new System.Windows.Forms.TabPage();
+            this.RemoverFuncaoButton = new System.Windows.Forms.Button();
             this.GridFuncoes = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.FuncaoTextBox = new System.Windows.Forms.TextBox();
             this.InserirFuncaoButton = new System.Windows.Forms.Button();
             this.TabPessoas = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.RemoverFuncaoButton = new System.Windows.Forms.Button();
-            this.GridPessoas = new System.Windows.Forms.DataGridView();
-            this.InserirPessoaButton = new System.Windows.Forms.Button();
-            this.RemoverPessoaButton = new System.Windows.Forms.Button();
-            this.PessoaTexBox = new System.Windows.Forms.TextBox();
             this.lblPessoa = new System.Windows.Forms.Label();
+            this.PessoaTexBox = new System.Windows.Forms.TextBox();
+            this.RemoverPessoaButton = new System.Windows.Forms.Button();
+            this.InserirPessoaButton = new System.Windows.Forms.Button();
+            this.GridPessoas = new System.Windows.Forms.DataGridView();
+            this.AbrirButton = new System.Windows.Forms.Button();
+            this.SalvarButton = new System.Windows.Forms.Button();
             this.TabPanel.SuspendLayout();
             this.TabFuncoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridFuncoes)).BeginInit();
@@ -75,6 +75,16 @@ namespace SibEscalas
             this.TabFuncoes.TabIndex = 0;
             this.TabFuncoes.Text = "Funcoes";
             this.TabFuncoes.UseVisualStyleBackColor = true;
+            // 
+            // RemoverFuncaoButton
+            // 
+            this.RemoverFuncaoButton.Location = new System.Drawing.Point(295, 304);
+            this.RemoverFuncaoButton.Name = "RemoverFuncaoButton";
+            this.RemoverFuncaoButton.Size = new System.Drawing.Size(87, 23);
+            this.RemoverFuncaoButton.TabIndex = 4;
+            this.RemoverFuncaoButton.Text = "Remover";
+            this.RemoverFuncaoButton.UseVisualStyleBackColor = true;
+            this.RemoverFuncaoButton.Click += new System.EventHandler(this.RemoverFuncaoButton_Click);
             // 
             // GridFuncoes
             // 
@@ -128,33 +138,41 @@ namespace SibEscalas
             this.TabPessoas.Text = "Pessoas";
             this.TabPessoas.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // lblPessoa
             // 
-            this.button1.Location = new System.Drawing.Point(26, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Abrir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lblPessoa.AutoSize = true;
+            this.lblPessoa.Location = new System.Drawing.Point(28, 34);
+            this.lblPessoa.Name = "lblPessoa";
+            this.lblPessoa.Size = new System.Drawing.Size(59, 17);
+            this.lblPessoa.TabIndex = 4;
+            this.lblPessoa.Text = "Pessoa:";
             // 
-            // button2
+            // PessoaTexBox
             // 
-            this.button2.Location = new System.Drawing.Point(107, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Salvar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.PessoaTexBox.Location = new System.Drawing.Point(31, 54);
+            this.PessoaTexBox.Name = "PessoaTexBox";
+            this.PessoaTexBox.Size = new System.Drawing.Size(251, 22);
+            this.PessoaTexBox.TabIndex = 3;
             // 
-            // RemoverFuncaoButton
+            // RemoverPessoaButton
             // 
-            this.RemoverFuncaoButton.Location = new System.Drawing.Point(295, 304);
-            this.RemoverFuncaoButton.Name = "RemoverFuncaoButton";
-            this.RemoverFuncaoButton.Size = new System.Drawing.Size(87, 23);
-            this.RemoverFuncaoButton.TabIndex = 4;
-            this.RemoverFuncaoButton.Text = "Remover";
-            this.RemoverFuncaoButton.UseVisualStyleBackColor = true;
-            this.RemoverFuncaoButton.Click += new System.EventHandler(this.RemoverFuncaoButton_Click);
+            this.RemoverPessoaButton.Location = new System.Drawing.Point(288, 297);
+            this.RemoverPessoaButton.Name = "RemoverPessoaButton";
+            this.RemoverPessoaButton.Size = new System.Drawing.Size(79, 23);
+            this.RemoverPessoaButton.TabIndex = 2;
+            this.RemoverPessoaButton.Text = "Remover";
+            this.RemoverPessoaButton.UseVisualStyleBackColor = true;
+            this.RemoverPessoaButton.Click += new System.EventHandler(this.RemoverPessoaButton_Click);
+            // 
+            // InserirPessoaButton
+            // 
+            this.InserirPessoaButton.Location = new System.Drawing.Point(288, 54);
+            this.InserirPessoaButton.Name = "InserirPessoaButton";
+            this.InserirPessoaButton.Size = new System.Drawing.Size(83, 23);
+            this.InserirPessoaButton.TabIndex = 1;
+            this.InserirPessoaButton.Text = "Inserir";
+            this.InserirPessoaButton.UseVisualStyleBackColor = true;
+            this.InserirPessoaButton.Click += new System.EventHandler(this.InserirPessoaButton_Click);
             // 
             // GridPessoas
             // 
@@ -167,49 +185,33 @@ namespace SibEscalas
             this.GridPessoas.Size = new System.Drawing.Size(340, 199);
             this.GridPessoas.TabIndex = 0;
             // 
-            // InserirPessoaButton
+            // AbrirButton
             // 
-            this.InserirPessoaButton.Location = new System.Drawing.Point(288, 54);
-            this.InserirPessoaButton.Name = "InserirPessoaButton";
-            this.InserirPessoaButton.Size = new System.Drawing.Size(83, 23);
-            this.InserirPessoaButton.TabIndex = 1;
-            this.InserirPessoaButton.Text = "Inserir";
-            this.InserirPessoaButton.UseVisualStyleBackColor = true;
-            this.InserirPessoaButton.Click += new System.EventHandler(this.InserirPessoaButton_Click);
+            this.AbrirButton.Location = new System.Drawing.Point(26, 12);
+            this.AbrirButton.Name = "AbrirButton";
+            this.AbrirButton.Size = new System.Drawing.Size(75, 23);
+            this.AbrirButton.TabIndex = 1;
+            this.AbrirButton.Text = "Abrir";
+            this.AbrirButton.UseVisualStyleBackColor = true;
+            this.AbrirButton.Click += new System.EventHandler(this.AbrirButton_Click);
             // 
-            // RemoverPessoaButton
+            // SalvarButton
             // 
-            this.RemoverPessoaButton.Location = new System.Drawing.Point(288, 297);
-            this.RemoverPessoaButton.Name = "RemoverPessoaButton";
-            this.RemoverPessoaButton.Size = new System.Drawing.Size(79, 23);
-            this.RemoverPessoaButton.TabIndex = 2;
-            this.RemoverPessoaButton.Text = "Remover";
-            this.RemoverPessoaButton.UseVisualStyleBackColor = true;
-            this.RemoverPessoaButton.Click += new System.EventHandler(this.RemoverPessoaButton_Click);
-            // 
-            // PessoaTexBox
-            // 
-            this.PessoaTexBox.Location = new System.Drawing.Point(31, 54);
-            this.PessoaTexBox.Name = "PessoaTexBox";
-            this.PessoaTexBox.Size = new System.Drawing.Size(251, 22);
-            this.PessoaTexBox.TabIndex = 3;
-            // 
-            // lblPessoa
-            // 
-            this.lblPessoa.AutoSize = true;
-            this.lblPessoa.Location = new System.Drawing.Point(28, 34);
-            this.lblPessoa.Name = "lblPessoa";
-            this.lblPessoa.Size = new System.Drawing.Size(59, 17);
-            this.lblPessoa.TabIndex = 4;
-            this.lblPessoa.Text = "Pessoa:";
+            this.SalvarButton.Location = new System.Drawing.Point(107, 12);
+            this.SalvarButton.Name = "SalvarButton";
+            this.SalvarButton.Size = new System.Drawing.Size(75, 23);
+            this.SalvarButton.TabIndex = 2;
+            this.SalvarButton.Text = "Salvar";
+            this.SalvarButton.UseVisualStyleBackColor = true;
+            this.SalvarButton.Click += new System.EventHandler(this.SalvarButton_Click);
             // 
             // SibEscalas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1482, 853);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SalvarButton);
+            this.Controls.Add(this.AbrirButton);
             this.Controls.Add(this.TabPanel);
             this.Name = "SibEscalas";
             this.Text = "Sib Escalas";
@@ -230,8 +232,8 @@ namespace SibEscalas
         private System.Windows.Forms.TabControl TabPanel;
         private System.Windows.Forms.TabPage TabFuncoes;
         private System.Windows.Forms.TabPage TabPessoas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AbrirButton;
+        private System.Windows.Forms.Button SalvarButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox FuncaoTextBox;
         private System.Windows.Forms.Button InserirFuncaoButton;
