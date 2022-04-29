@@ -1,30 +1,27 @@
 ﻿using SibEscalas.Dominio.Extensions;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
+using System.Windows.Forms;
 
 namespace SibEscalas.Dominio.Servico
 {
-    public class ArquivoServico
+    public static class ArquivoServico
     {
-        public void SalvarArquivo(string stringPath, string titulo)
+        public static void SalvarArquivo(SaveFileDialog fileDialog, Store store)
         {
-            //recebo caminho do arquivo -> lista de objetos
-            //converto a lista pra Json
-            //escrevo no disco
+            string jsonStore = JsonExtension.ConverteObjectParaJSon<Store>(store);
 
-            string local = stringPath + titulo + ".json";
+            FileStream fs = new FileStream(fileDialog.FileName, FileMode.Create);
+            StreamWriter escritor = new StreamWriter(fs);
 
-            using (StreamWriter escritor = new StreamWriter(local))
-            {
-                //escritor.WriteLine(JsonExtension.ConverteObjectParaJSon<IList<Pessoa>>(pessoas));
-            }
+            escritor.WriteLine(jsonStore);
+            escritor.Close();
         }
 
-        public void AbrirArquivo()
+        public static Store AbrirArquivo(OpenFileDialog fileDialog)
         {
-
+            StreamReader sr = new StreamReader(fileDialog.FileName);
+         
+            return JsonExtension.ConverteJSonParaObject<Store>(sr.ReadLine());
         }
     }
 }

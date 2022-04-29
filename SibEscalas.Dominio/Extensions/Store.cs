@@ -1,17 +1,20 @@
 ﻿using SibEscalas.Dominio.Models;
-using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace SibEscalas.Dominio.Extensions
 {
-    public static class Store
+    public class Store
     {
-        public static IList<Funcao> Funcoes { get; set; }
-        public static IList<Pessoa> Pessoas { get; set; }
+        public BindingList<Funcao> Funcoes { get; set; }
+        public BindingList<Pessoa> Pessoas { get; set; }
 
-        public static void Iniciar()
+        public void AtualizarStore(Store store)
         {
-            Funcoes = new List<Funcao>();
-            Pessoas = new List<Pessoa>();
+            foreach (Funcao funcao in store.Funcoes)
+                Funcoes.Add(funcao);
+
+            foreach (Pessoa pessoa in store.Pessoas)
+                Pessoas.Add(pessoa);
         }
     }
 }
